@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial Collage</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #001f3f, #001f3f);
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+        }
+
+        img {
+            width: calc(33.33% - 20px);
+            max-width: 300px;
+            height: auto;
+            margin: 10px;
+            border: 5px solid white;
+            box-sizing: border-box;
+        }
+
+        .page-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        button {
+            margin: 5px;
+            display: none;
+        }
+
+        .page-buttons button.active {
+            display: inline-block;
+        }
+
+        .page-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            border: 5px solid #0074cc;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .page-container.active {
+            display: flex;
+        }
+
+        .title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .page-container div {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Add image elements here -->
+    <img src="https://i.imgur.com/qAeJ1A1.jpg" alt="Memorial Image 1">
+    <img src="https://i.imgur.com/topbtbT.jpg" alt="Memorial Image 2">
+    <img src="https://i.imgur.com/cDZb5LL.jpg" alt="Memorial Image 3">
+    <img src="https://i.imgur.com/W7FEFkY.jpg" alt="Memorial Image 4">
+    <img src="https://i.imgur.com/We5Dd23.jpg" alt="Memorial Image 5">
+    <img src="https://i.imgur.com/UWaMgpo.jpg" alt="Memorial Image 6">
+    <img src="https://i.imgur.com/tnDGoMR.jpg" alt="Memorial Image 7">
+    <img src="https://i.imgur.com/Jz9QIt7.jpg" alt="Memorial Image 8">
+    <img src="https://i.imgur.com/m7fmZU6.jpg" alt="Memorial Image 9">
+    <img src="https://i.imgur.com/xyRAO0O.jpg" alt="Memorial Image 10">
+    <img src="https://i.imgur.com/8d8U3e9.jpg" alt="Memorial Image 11">
+    <img src="https://i.imgur.com/7JqMCMa.png" alt="Memorial Image 12">
+    <img src="https://i.imgur.com/BISyGXG.jpg" alt="Memorial Image 13">
+
+
+    <div class="page-buttons">
+        <button onclick="showPage()" class="active">Page 2</button>
+        <button onclick="showFirstPage()">Page 1</button>
+    </div>
+
+    <div class="page-container" id="page2">
+        <div class="title">Dear Mother</div>
+        <div>
+            The absence of your presence has carved a profound void that words struggle to express. You were, unequivocally,
+            the most extraordinary woman in the world. Your love, a steady anchor in an ocean of worry and uncertainty, now leaves a wound that time seems unable
+            to heal.
+
+            You embodied strength, kindness, and grace. Your laughter resonated through the home, a source of solace in
+            life's complexities. Your wisdom was a guiding light, and your hugs offered comfort in moments of despair. Your
+            home-cooked meals weren't just sustenance; they were a tangible expression of the love that defined you.
+
+            The yearning to see you, to hear your voice, is an ever-present weight. Though your physical presence is gone,
+            the impact of your love endures in the fabric of our lives. I cling to the memories we shared and strive to
+            honor the lessons you imparted. Mom, the depth of my missing you is immeasurable, and your love remains an
+            unwavering force in my life.
+
+            One day, I will visit you in person once more, if only just to be able to feel closer to you than this ache in
+            my heart.
+        </div>
+    </div>
+
+    <script>
+        function showPage() {
+            document.getElementById('page2').classList.add('active');
+            document.querySelector('.page-buttons button.active').classList.remove('active');
+            document.querySelector('.page-buttons button:last-child').classList.add('active');
+        }
+
+        function showFirstPage() {
+            document.getElementById('page2').classList.remove('active');
+            document.querySelector('.page-buttons button.active').classList.remove('active');
+            document.querySelector('.page-buttons button:first-child').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
